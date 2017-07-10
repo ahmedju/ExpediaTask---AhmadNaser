@@ -10,7 +10,6 @@ import com.expedia.task.control.beans.DestinationHotel;
 import com.expedia.task.control.beans.HotelInfo;
 import com.expedia.task.control.beans.OfferDateRangeHotel;
 import com.expedia.task.utils.TextUtils;
-import com.sun.istack.internal.Nullable;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -163,7 +162,6 @@ public class JsonTools {
      * @return boolean : this method check if 'currentHotel' have destination
      * and price data, return true if found hotel, else return false
      */
-    @Nullable
     private AllBeans getIfFoundHotel(JsonObject currentHotel, DestinationHotel destinationHotel, HotelInfo hotelInfo, OfferDateRangeHotel offerDateRangeHotel) {
 
         DestinationHotel destinationJson = getIfContainsData(currentHotel.getJsonObject("destination"), destinationHotel);
@@ -187,7 +185,6 @@ public class JsonTools {
      * @param destinationHotel
      * @return instance DestinationHotel if and only if data of destinationHotel contains in jsonObject
      */
-    @Nullable
     private DestinationHotel getIfContainsData(JsonObject jsonObject, DestinationHotel destinationHotel) {
         String destinationCity = jsonObject.getString("city");
         String destinationCountry = jsonObject.getString("country");
